@@ -3,7 +3,7 @@ import SearchBlock from "./SearchBlock";
 import Profile from "./Profile";
 
 class HeroPage extends React.Component {
-  state = { hero: null, id: "93" };
+  state = { hero: null, id: "151" };
 
   render() {
     return (
