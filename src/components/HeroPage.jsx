@@ -12,7 +12,7 @@ class HeroPage extends React.Component {
        notFound = true
     }
     return (
-      <section>
+      <section className="heroPage">
         <SearchBlock stateUpdater={this.heroSearchNameUpdater} />
         {(this.state.hero) && <Profile heroData={this.state.hero}  />}
         {notFound && <Error searchAttempt={this.state.searchName} />}
@@ -45,8 +45,8 @@ heroSearchNameUpdater = (searchInput)=>{
         return buffer.json();
       })
       .then(({results}) => {
-        if(results){
-          this.fetchHeroById(results[0].id);
+        if(results.length>0){
+          this.setState({ hero: results });
         }else{
           this.setState({ hero: "" });
     

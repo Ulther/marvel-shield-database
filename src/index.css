@@ -14,34 +14,68 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.profileContent {
-    display: flex;
-    padding-top: 20px;
-    justify-content: center;
-
-}
-.profileImage {
-
-    max-width: 500px;
-    justify-content: left;
-}
-label{
-  font-weight: bolder;
-  justify-content: left;
-}
-
-li{
-display: flex;
- list-style-type:none;
- justify-content: space-around;
- padding-bottom: 20px;
- flex-direction: row;
- max-width: 500px;
+.heroPage {
+    display:flex;
+    flex-direction: column;
 }
 
 .headerLogo {
-  padding-top: 20px;
+    padding-top: 2%;
     max-height: 100px;
-    border-color : white;
+    max-width: 100px;
+    align-self: center;
+  }
+
+header{
+    padding-left: 5%;
+    padding-right: 5%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchBlock{
+    padding-bottom:5%;
+    padding-left:5%;
+}
+
+.inputLabel{
+    font-weight:bolder;
+}
+
+.searchInput{
+    border-color: rgb(62, 139, 226);
+    border-radius: 4px;
 
 }
+.submitButton{
+    border: none;
+    border-radius: 8px;
+    width: 80px;
+    height: 25px;
+    color: white;
+    background-color: rgb(62, 139, 226);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.heroList{
+    justify-content: center;
+    width: 90%;
+    flex-direction: column;
+}
+
+.heroProfileListItem {
+    padding-bottom:5%;
+    list-style-type:none;
+}
+
+.heroDetailslist{
+    justify-content: space-around;
+    list-style-type:none;
+}
+
+.profileImage {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+

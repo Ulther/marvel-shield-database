@@ -15,11 +15,11 @@ class SearchBlock extends React.Component {
   }
     render() {
         return(
-        <form onSubmit={this.handleSubmit}> 
-          <label htmlFor="searchInput">Search By Name: </label> 
-        <input id="searchInput" placeholder="Name" onChange={this.handleInput}></input> 
+        <form className="searchBlock" onSubmit={this.handleSubmit}> 
+          <label className="inputLabel" htmlFor="searchInput">Search By Name: </label> 
+        <input className="searchInput" id="searchInput" placeholder="Name" onChange={this.handleInput}></input> 
         
-        <button type="submit" >Search</button> 
+        <button className="submitButton" type="submit" >Search</button> 
         </form>);
     }
 }
