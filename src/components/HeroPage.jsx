@@ -2,29 +2,37 @@ import React from "react";
 import SearchBlock from "./SearchBlock";
 import Profile from "./Profile";
 import Error from "./Error"
+import Loading from "./Loading"
 
 class HeroPage extends React.Component {
-  state = { hero: null, searchName: "" };
+  state = { hero: null, searchName: "" ,isLoading:false };
 
   render() {
+
     let notFound = false;
+    if(this.state.isLoading){
+      console.log("LOADING");
+   }
+   
     if(this.state.hero === "" && this.state.searchName !== ""){
        notFound = true
     }
+
     return (
       <section className="heroPage">
         <SearchBlock stateUpdater={this.heroSearchNameUpdater} />
+        {this.state.isLoading && <Loading />}
         {(this.state.hero) && <Profile heroData={this.state.hero}  />}
         {notFound && <Error searchAttempt={this.state.searchName} />}
       </section>
     );
   }
 
-  componentDidMount (){
-    if (this.state.searchName!== ""){
-      this.fetchHeroByName(this.state.searchName);
-    }
-  };
+  // componentDidMount (){
+  //   if (this.state.searchName!== ""){
+  //     this.fetchHeroByName(this.state.searchName);
+  //   }
+  // };
 
   componentDidUpdate(prevProps,prevState) {
     if (this.state.searchName!== prevState.searchName){
@@ -34,7 +42,7 @@ class HeroPage extends React.Component {
 
 heroSearchNameUpdater = (searchInput)=>{
 
-  this.setState({searchName : searchInput})
+  this.setState({searchName : searchInput, isLoading:true})
 }
 
 
@@ -45,10 +53,11 @@ heroSearchNameUpdater = (searchInput)=>{
         return buffer.json();
       })
       .then(({results}) => {
-        if(results.length>0){
-          this.setState({ hero: results });
+        if(results && results.length>0){
+          this.setState({ hero: results,isLoading:false });
+          console.log("LOADED");
         }else{
-          this.setState({ hero: "" });
+          this.setState({ hero: "" ,isLoading:false});
     
         }
       });

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: #282c34;
-  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/27351993181594518/34A438A9D9A103FC1BD84E6D1159CDE527219F68/");
+  background-image:linear-gradient(to bottom, transparent, rgba(45, 206, 255, 0.377)), url("https://steamuserimages-a.akamaihd.net/ugc/27351993181594518/34A438A9D9A103FC1BD84E6D1159CDE527219F68/");
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: rgb(231, 231, 231);
@@ -37,7 +37,7 @@ header {
 }
 
 .searchBlock {
-  padding-bottom: 5%;
+  padding-top: 3%;
 }
 
 .inputLabel {
@@ -56,6 +56,21 @@ header {
   color: white;
   background-color: rgb(62, 139, 226);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.loadingStyle {
+  background-image: url("https://66.media.tumblr.com/tumblr_m4m7ipXi0m1rvli0lo1_400.gifv");
+  border: solid white 3px;
+  box-shadow: 0px 0px 10px #74b5ff;
+  border-radius: 100px;
+  background-size: 100% 100%;
+  width: 800px;
+  height: 512px;
+  background-repeat: no-repeat;
+  align-self: center;
+  margin:5%;
+  
+ 
 }
 
 .heroList {
