@@ -57,6 +57,24 @@ header {
   background-color: rgb(62, 139, 226);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.errorMessage{
+  padding-top:5%;
+  font-size: 32px;
+  font-weight: bolder;
+}
+.errorSearchAttempt{
+  color:#3895ff;
+  margin-left: 1%;
+  margin-right: 1%;
+  animation: pulse 1s  infinite;
+  text-shadow: 0px 0px 50px rgb(255, 255, 255), 0 0 100px rgb(38, 75, 197);
+}
+@keyframes pulse {
+  50% {
+    opacity: 30%;
+  }
+}
+
 
 .loadingStyle {
   background-image: url("https://66.media.tumblr.com/tumblr_m4m7ipXi0m1rvli0lo1_400.gifv");

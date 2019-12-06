@@ -5,7 +5,7 @@ import Error from "./Error"
 import Loading from "./Loading"
 
 class HeroPage extends React.Component {
-  state = { hero: null, searchName: "" ,isLoading:false };
+  state = { hero: null, searchName: "" ,isLoading:false ,prevSearch:""};
 
   render() {
 
@@ -28,11 +28,6 @@ class HeroPage extends React.Component {
     );
   }
 
-  // componentDidMount (){
-  //   if (this.state.searchName!== ""){
-  //     this.fetchHeroByName(this.state.searchName);
-  //   }
-  // };
 
   componentDidUpdate(prevProps,prevState) {
     if (this.state.searchName!== prevState.searchName){
@@ -41,8 +36,13 @@ class HeroPage extends React.Component {
   };
 
 heroSearchNameUpdater = (searchInput)=>{
-
-  this.setState({searchName : searchInput, isLoading:true})
+  if(searchInput===""){
+    this.setState({searchName : searchInput, isLoading:false,prevSearch:searchInput})
+   } else if(searchInput===this.state.prevSearch){
+    this.setState({isLoading:false})
+  }else{
+    this.setState({searchName : searchInput, isLoading:true,prevSearch:searchInput})
+  }
 }
 
 
